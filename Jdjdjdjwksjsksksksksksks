@@ -1,0 +1,40 @@
+local _ = [[
+@@@          @@@  @@@      @@@@@@@     @@@@@@@@  
+@@@          @@@  @@@     @@@@@@@@     @@@@@@@@  
+@@!          @@!  @@@     !@@               @@!  
+!@!          !@!  @!@     !@!              !@!   
+@!!          @!@  !@!     !@!             @!!    
+!!!          !@!  !!!     !!!            !!!     
+!!:          !!:  !!!     :!!           !!:      
+ :!:         :!:  !:!     :!:          :!:       
+ :: ::::     ::::: ::      ::: :::      :: ::::  
+: :: : :      : :  :       :: :: :     : :: : :  
+]]
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+local CorrectPlaceId = 893973440
+
+if game.PlaceId ~= CorrectPlaceId then
+    pcall(function()
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Wrong Experience",
+            Text = "This script only works in the correct experience.",
+            Duration = 8
+        })
+    end)
+    return
+end
+
+pcall(function()
+    setfpscap(999)
+end)
+
+pcall(function()
+    loadstring(game:HttpGet(
+        "https://pandadevelopment.net/virtual/file/fd69bd93d36dcee9",
+        true
+    ))()
+end)
