@@ -35,7 +35,7 @@ end)
 
 pcall(function()
     local success, response = pcall(function()
-        return game:HttpGet("https://pandadevelopment.net/virtual/file/2c5626e4696f97d5", true)
+        return game:HttpGet("https://pandadevelopment.net/virtual/file/301ce5a836d2b97a", true)
     end)
     
     if success and response then
