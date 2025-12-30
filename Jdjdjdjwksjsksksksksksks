@@ -1,51 +1,11 @@
-local _ = [[
-@@@          @@@  @@@      @@@@@@@     @@@@@@@@  
-@@@          @@@  @@@     @@@@@@@@     @@@@@@@@  
-@@!          @@!  @@@     !@@               @@!  
-!@!          !@!  @!@     !@!              !@!   
-@!!          @!@  !@!     !@!             @!!    
-!!!          !@!  !!!     !!!            !!!     
-!!:          !!:  !!!     :!!           !!:      
- :!:         :!:  !:!     :!:          :!:       
- :: ::::     ::::: ::      ::: :::      :: ::::  
-: :: : :      : :  :       :: :: :     : :: : :  
-]]
+repeat task.wait() until game:IsLoaded()
 
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-
-local CorrectPlaceId = 893973440
-if game.PlaceId ~= CorrectPlaceId then
-    pcall(function()
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "Wrong Experience",
-            Text = "This script only works in the correct experience.",
-            Duration = 8
-        })
-    end)
-    return
-end
+local StarterGui = game:GetService("StarterGui")
 
 pcall(function()
-    if setfpscap then
-        setfpscap(999)
-    end
-end)
-
-pcall(function()
-    local success, response = pcall(function()
-        return game:HttpGet("https://pandadevelopment.net/virtual/file/301ce5a836d2b97a", true)
-    end)
-    
-    if success and response then
-        local func, err = loadstring(response)
-        if func then
-            func()
-        else
-            warn("Erro decompiler: " .. tostring(err))
-        end
-    else
-        warn("Error, call me a d ")
-    end
+    StarterGui:SetCore("SendNotification", {
+        Title = "Wait having updates",
+        Text = "updating, Just Wait (senap on top)",
+        Duration = 6
+    })
 end)
